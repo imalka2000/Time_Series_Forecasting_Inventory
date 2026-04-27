@@ -1,0 +1,32 @@
+
+================================================================================
+                    Page view Forecasting Report
+================================================================================
+
+📅 REPORT PERIOD
+   Data Analyzed: December 2007 to January 2016
+   Forecast Horizon: Next 6 months
+
+📊 MODEL PERFORMANCE
+   Best Model: Moving Average
+   Accuracy (MAPE): 51.1%
+   Accuracy (MAE): 74,106 page views
+
+📈 FORECAST SUMMARY (Next 6 Months)
+   Total Projected Views: 399,092
+   Average Monthly Views: 66,515
+
+🎯 BUSINESS INSIGHTS
+   1. Peak traffic expected in February 2016
+   2. Recommend increasing server capacity by 30% during peak month
+   3. Plan content releases around forecasted high-traffic periods
+   4. Budget for marketing spend: $665 per month
+
+⚠️ LIMITATIONS
+   - Forecast based solely on historical patterns
+   - Does not account for external events (e.g., new movies, football seasons)
+   - Assumes no major changes in Wikipedia traffic patterns
+
+================================================================================
+Report Generated: 2026-04-27 18:55:42
+================================================================================
