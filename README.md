@@ -1,25 +1,37 @@
-# 📈 Time Series Forecasting for Wikipedia Page Views
+# 📈 Time Series Forecasting: Wikipedia Page Views Analysis
 
-## Overview
+This notebook performs a comprehensive analysis of Wikipedia page view trends for Peyton Manning (2007-2016), leveraging descriptive statistics, time series decomposition, advanced forecasting techniques, and model evaluation metrics.
 
-This project implements a comprehensive time series analysis and forecasting pipeline to predict Wikipedia page view traffic for Peyton Manning (2007-2016). Using historical daily page view data, I built and compared three forecasting models to generate actionable 6-month predictions for resource planning and content strategy optimization.
+## Project Objectives
 
-**Dataset:** Peyton Manning Wikipedia page views (2007-2016) - 2,905 daily records with strong seasonal patterns and occasional event-driven spikes.
+- Understand temporal patterns in page view data (trends, seasonality, volatility)
+- Decompose time series into trend, seasonal, and residual components
+- Build and compare multiple forecasting models (Moving Average, Exponential Smoothing, ARIMA)
+- Evaluate model performance using MAE and MAPE metrics
+- Generate actionable forecasts to support resource planning and content strategy
 
-**Key components of the project include:**
+## Contents
 
-- **Data Cleaning & Preparation**: Handling missing values, date gaps, and converting log-scale data to actual page views
-- **Exploratory Data Analysis**: Visualizing trends, seasonality, and outliers in the traffic data
-- **Time Series Decomposition**: Breaking down the series into trend, seasonal, and residual components
-- **Forecasting Models**: Implementing and comparing Moving Average, Exponential Smoothing (Holt-Winters), and ARIMA models
-- **Model Evaluation**: Using MAE (Mean Absolute Error) and MAPE (Mean Absolute Percentage Error) metrics
-- **Business Recommendations**: Translating forecasts into actionable resource planning strategies
+1. Initial Setup & Library Imports
+2. Data Loading & Cleaning
+3. Exploratory Data Analysis (EDA)
+4. Time Series Decomposition
+5. Train-Test Split
+6. Forecasting Models
+   - Model 1: Simple Moving Average
+   - Model 2: Exponential Smoothing (Holt-Winters)
+   - Model 3: ARIMA
+7. Model Performance Comparison
+8. Final Forecast & Confidence Bands
+9. Business Insights & Recommendations
+10. Export Results
 
 ---
 
 ## 📊 Key Findings
 
 ### Data Characteristics
+
 | Metric | Value |
 |--------|-------|
 | Time Period | December 2007 - January 2016 |
@@ -27,17 +39,17 @@ This project implements a comprehensive time series analysis and forecasting pip
 | Monthly Aggregation | 98 months |
 | Data Volatility | High (Coefficient of Variation: 96%) |
 
-### Model Performance Comparison
+### Model Performance
 
-| Model | MAE (Views) | MAPE | Best For |
-|-------|-------------|------|----------|
-| **Moving Average** | 74,106 | **51.1%** | Volatile data with sudden spikes |
-| ARIMA | 72,010 | 56.7% | Data with autocorrelation patterns |
-| Exponential Smoothing | 137,465 | 177.4% | Data with clear trend + seasonality |
+| Model | MAE (Views) | MAPE |
+|-------|-------------|------|
+| Moving Average | 74,106 | 51.1% |
+| ARIMA | 72,010 | 56.7% |
+| Exponential Smoothing | 137,465 | 177.4% |
 
-**🏆 Best Model:** Moving Average (3-month window)
+**🏆 Best Model: Moving Average (3-month window)**
 
-> *Why Moving Average won:* The dataset has high volatility and sudden spikes (e.g., news events about the quarterback). Simpler models often outperform complex ones on noisy, event-driven data.
+> The Moving Average model performed best due to the dataset's high volatility and sudden event-driven spikes.
 
 ### 6-Month Forecast (Feb 2016 - Jul 2016)
 
@@ -54,32 +66,50 @@ This project implements a comprehensive time series analysis and forecasting pip
 
 ---
 
-## 📈 Visualizations
+## 💡 Business Recommendations
 
-### Daily Page Views (2007-2016)
-![Daily Page Views](images/daily_views.png)
-*Daily traffic showing clear spikes during football season and major news events*
+### Server Capacity Planning
+- Maintain 30% buffer above historical peak demand (237,300 concurrent capacity)
 
-### Time Series Decomposition
-![Decomposition](images/decomposition.png)
-*Breaking down the series into trend, seasonal, and residual components*
+### Seasonal Resource Allocation
+- **Football Season (Sept-Jan):** Increase capacity by 40%
+- **Off-Season (Feb-Aug):** Maintain baseline levels
 
-### Monthly Sales Pattern
-![Monthly Views](images/monthly_views.png)
-*Monthly aggregated views showing seasonal peaks and long-term decline*
+### Alert Triggers
 
-### Model Performance Comparison
-![Model Comparison](images/model_comparison.png)
-*Comparing Moving Average, Exponential Smoothing, and ARIMA predictions against actual test data*
-
-### 6-Month Forecast with Confidence Bands
-![Forecast](images/forecast.png)
-*Final forecast with 80-120% confidence bands for uncertainty quantification*
+| Traffic Level | Action |
+|---------------|--------|
+| Below 50,000 | Normal operations |
+| 50,000 - 100,000 | Increase monitoring |
+| 100,000 - 200,000 | Scale resources |
+| Above 200,000 | Emergency protocols |
 
 ---
 
-## 💡 Business Recommendations
+## 🛠️ Technologies Used
 
-Based on the forecast analysis, here are actionable recommendations for resource planning:
+| Tool/Library | Purpose |
+|--------------|---------|
+| Python 3.12 | Core programming language |
+| pandas | Data manipulation |
+| NumPy | Numerical computing |
+| Matplotlib / Seaborn | Data visualization |
+| statsmodels | Time series modeling |
+| scikit-learn | Performance metrics |
+| Google Colab | Development environment |
 
-### 1. Server Capacity Planning
+---
+
+## 📐 Statistical Techniques
+
+| Technique | Purpose |
+|-----------|---------|
+| Time Series Decomposition | Separate trend, seasonality, residuals |
+| Moving Average | Baseline model for volatile data |
+| Holt-Winters Exponential Smoothing | Capture trend + seasonality |
+| ARIMA | Capture autocorrelation patterns |
+| Train-Test Split (80/20) | Model validation |
+| MAE / MAPE | Error metrics |
+| Confidence Bands (±20%) | Uncertainty quantification |
+
+---
