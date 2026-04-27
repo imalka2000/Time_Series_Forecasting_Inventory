@@ -113,3 +113,15 @@ This notebook performs a comprehensive analysis of Wikipedia page view trends fo
 | Confidence Bands (±20%) | Uncertainty quantification |
 
 ---
+
+## 🚀 How to Run
+
+### Google Colab (Recommended)
+1. Open [Google Colab](https://colab.research.google.com/)
+2. Upload the notebook file
+3. Run cells sequentially (Cell 1 → Cell 24)
+
+### Local Environment
+```bash
+pip install pandas numpy matplotlib statsmodels scikit-learn
+jupyter notebook Time_Series_Forecasting_Wikipedia.ipynb
