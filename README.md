@@ -119,7 +119,7 @@ This notebook performs a comprehensive analysis of Wikipedia page view trends fo
 ### Google Colab (Recommended)
 1. Open [Google Colab](https://colab.research.google.com/)
 2. Upload the notebook file
-3. Run cells sequentially (Cell 1 → Cell 24)
+3. Run Steps sequentially
 
 ### Local Environment
 ```bash
